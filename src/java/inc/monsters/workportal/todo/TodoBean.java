@@ -21,6 +21,7 @@ public class TodoBean implements Serializable {
     Service service;
     
     private String title;
+    private String description;
 
     public String getTitle() {
         return title;
@@ -28,6 +29,14 @@ public class TodoBean implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -39,6 +48,7 @@ public class TodoBean implements Serializable {
         System.out.println(this.title);
         Todo todo = new Todo();
         todo.setTitle(this.title);
+        todo.setDescription(description);
         service.add(todo);
     }
 }
