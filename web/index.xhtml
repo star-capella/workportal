@@ -6,15 +6,10 @@
         <title>Work Portal: Todo List</title>
     </h:head>
     <h:body>
-        <h:form>
-            <h:outputLabel for="title">Title:</h:outputLabel>
-            <h:inputText id="title" value="#{todoBean.title}"></h:inputText>
-            <p/>
-            <h:outputLabel for="description">Description:</h:outputLabel>
-            <h:inputTextarea id="description" value="#{todoBean.description}"></h:inputTextarea>
-            <p/>
-            <h:commandButton value="Add" action="#{todoBean.add}"></h:commandButton>
-        </h:form>
+        <ul>
+            <li><a href="edit.xhtml">Edit</a></li>
+            <li><a href="list.xhtml">List</a></li>
+        </ul>
     </h:body>
 </html>
 

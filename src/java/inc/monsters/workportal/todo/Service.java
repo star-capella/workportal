@@ -5,6 +5,8 @@
  */
 package inc.monsters.workportal.todo;
 
+import java.util.List;
+import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,6 +17,8 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class Service {
+    private static final Logger LOG = Logger.getLogger(Service.class.getName());
+    
     @PersistenceContext
     private EntityManager em;
     
@@ -22,7 +26,8 @@ public class Service {
         em.persist(_todo);
     }
     
-    public void get() {
-        
+    public List<Todo> get() {
+        LOG.info("Service:get()");
+        return em.createQuery("SELECT t FROM Todo t", Todo.class).getResultList();
     }
 }

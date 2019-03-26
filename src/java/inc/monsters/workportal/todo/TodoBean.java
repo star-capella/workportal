@@ -6,7 +6,8 @@
 package inc.monsters.workportal.todo;
 
 import java.io.Serializable;
-import javax.enterprise.context.SessionScoped;
+import java.util.logging.Logger;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -15,10 +16,12 @@ import javax.inject.Named;
  * @author tcurtis
  */
 @Named
-@SessionScoped
-public class TodoBean implements Serializable {
+@RequestScoped
+public class TodoBean implements Serializable {  
     @Inject
     Service service;
+    
+    private static final Logger LOG = Logger.getLogger(TodoBean.class.getName());
     
     private String title;
     private String description;
@@ -45,7 +48,7 @@ public class TodoBean implements Serializable {
     }
     
     public void add() {
-        System.out.println(this.title);
+        LOG.info("TodoBean:add()");
         Todo todo = new Todo();
         todo.setTitle(this.title);
         todo.setDescription(description);
