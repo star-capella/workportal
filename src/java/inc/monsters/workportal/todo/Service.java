@@ -22,12 +22,26 @@ public class Service {
     @PersistenceContext
     private EntityManager em;
     
+    /**
+     *
+     * @param _todo
+     */
     public void add(Todo _todo) {
         em.persist(_todo);
     }
     
-    public List<Todo> get() {
-        LOG.info("Service:get()");
+    /**
+     *
+     * @return
+     */
+    public List<Todo> getAll() {
+        LOG.info("Service:getAll()");
         return em.createQuery("SELECT t FROM Todo t", Todo.class).getResultList();
+    }
+    
+    public Todo get(Long _id) {
+        LOG.info("Service:get()");
+        System.out.println(_id);
+        return em.find(Todo.class, _id);
     }
 }

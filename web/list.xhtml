@@ -32,6 +32,15 @@
                         </f:facet>
                         <h:outputText value="#{item.id}"/>
                     </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value=""/>
+                        </f:facet>
+                        <h:link value="edit" outcome="edit">
+                            <f:param name="id" value="#{item.id}"/>
+                        </h:link>
+                        <h:outputText value="#{item.id}"/>
+                    </h:column>
 
                 </h:dataTable>
             </h:form>

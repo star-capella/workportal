@@ -27,19 +27,30 @@ public class ListBean implements Serializable {
     
     private List<Todo> todoList;
 
+    /**
+     *
+     * @return
+     */
     public List<Todo> getTodoList() {
         LOG.info("ListBean:getTodoList()");
         return todoList;
     }
 
+    /**
+     *
+     * @param todoList
+     */
     public void setTodoList(List<Todo> todoList) {
         this.todoList = todoList;
     }
 
+    /**
+     *
+     */
     @PostConstruct
     public void init() {
         LOG.info("ListBean:init()");
         
-        todoList = service.get();
+        todoList = service.getAll();
     }
 }
