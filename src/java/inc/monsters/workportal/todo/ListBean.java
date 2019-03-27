@@ -20,6 +20,8 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class ListBean implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
     @Inject
     Service service;
     

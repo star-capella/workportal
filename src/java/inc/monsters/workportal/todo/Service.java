@@ -27,7 +27,8 @@ public class Service {
      * @param _todo
      */
     public void add(Todo _todo) {
-        em.persist(_todo);
+        LOG.info("Service:getAll()");
+        em.merge(_todo);
     }
     
     /**
@@ -41,7 +42,6 @@ public class Service {
     
     public Todo get(Long _id) {
         LOG.info("Service:get()");
-        System.out.println(_id);
         return em.find(Todo.class, _id);
     }
 }

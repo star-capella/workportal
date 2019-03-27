@@ -21,13 +21,24 @@ import javax.servlet.http.HttpServletRequest;
 @Named
 @RequestScoped
 public class TodoBean implements Serializable {  
+    private static final long serialVersionUID = 1L;
+    
     @Inject
     Service service;
     
     private static final Logger LOG = Logger.getLogger(TodoBean.class.getName());
     
+    private Long id;
     private String title;
     private String description;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     /**
      *
@@ -75,13 +86,10 @@ public class TodoBean implements Serializable {
         Todo todo;
         HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
         String id = request.getParameter("id");
-        System.out.println(id);
         
         if (id != null) {
-            System.out.println("long: " + Long.parseLong(id));
             todo = service.get(Long.parseLong(id));
-            
-            // add id here!!!
+            this.id = todo.getId();
             this.title = todo.getTitle();
             this.description = todo.getDescription();
         }
@@ -93,8 +101,9 @@ public class TodoBean implements Serializable {
     public void add() {
         LOG.info("TodoBean:add()");
         Todo todo = new Todo();
+        todo.setId(this.id);
         todo.setTitle(this.title);
-        todo.setDescription(description);
+        todo.setDescription(this.description);
         service.add(todo);
     }
 }

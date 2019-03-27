@@ -13,6 +13,7 @@
             <h:outputLabel for="description">Description:</h:outputLabel>
             <h:inputTextarea id="description" value="#{todoBean.description}"></h:inputTextarea>
             <p/>
+            <h:inputHidden id="id" value="#{todoBean.id}"/>
             <h:commandButton value="Add" action="#{todoBean.add}"></h:commandButton>
         </h:form>
     </h:body>
