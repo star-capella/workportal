@@ -2,9 +2,6 @@ Enable secure administration
 ============================
 
 $ asadmin change-admin-password
-
-restart
-
 $ asadmin enable-secure-admin
 
 
