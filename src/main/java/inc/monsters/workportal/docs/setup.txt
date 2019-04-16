@@ -1,0 +1,70 @@
+Enable secure administration
+============================
+
+$ asadmin change-admin-password
+$ asadmin enable-secure-admin
+
+
+Add user to server
+==================
+
+Add an authorized user to GlassFish Server.
+-------------------------------------------
+-From the Administration Console, expand the Configurations node, then expand the server-config node.
+-Expand the Security node.
+-Expand the Realms node.
+-Select the File node.
+-On the Edit Realm page, click Manage Users.
+-On the File Users page, click New.
+-In the User ID field, enter a user ID.
+-In the Group List field, enter TutorialUser.
+-In the New Password and Confirm New Password fields, enter a password.
+-Click OK.
+
+Set up Default Principal to Role Mapping in GlassFish Server.
+-------------------------------------------------------------
+-From the Administration Console, expand the Configurations node, then expand the server-config node.
+-Select the Security node.
+-Select the Default Principal to Role Mapping Enabled check box.
+-Click Save.
+
+
+Create Database, Datasource and Pool
+==========================
+
+Create database
+---------------
+-ij
+-ij> CONNECT 'jdbc:derby:workportaldb;create=true';
+:connect 'jdbc:derby:workportaldb;create=true;user=workportal;password=workportal';
+
+Create Pool
+-----------
+Resource->JDBC->JDBC Connection Pools->New
+Pool Name: WorkPortalPool
+Resource Type: javax.sql.DataSource
+Database Driver Vendor: JavaDB
+
+next
+
+User: workportal
+DatabaseName: workportaldb
+DataSourceName: workportaldb
+Password: workportal
+
+Create JDBC Resource
+--------------------
+Resource->JDBC->JDBC Resources
+JNDI Name: jdbc/WorkPortalDB
+Pool Name: WorkPortalPool
+
+
+Starting and stopping Glassfish
+===============================
+asadmin start-domain
+asadmin stop-domain 
+
+Starting and stopping JavaDB
+============================
+asadmin start-database --dbhome <dir>
+asadmin start-database 
