@@ -51,6 +51,7 @@ User: workportal
 DatabaseName: workportaldb
 DataSourceName: workportaldb
 Password: workportal
+(SecurityMechanism: 3) ??
 
 Create JDBC Resource
 --------------------
