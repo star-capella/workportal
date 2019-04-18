@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="/workportal/webjars/bulma/0.7.4/css/bulma.min.css"/>
+        <title>Work Portal: Todo List</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <ui:insert name="top">
+                <section class="hero is-dark is-small is-bold">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">Todo List</h1>
+                        </div>
+                    </div>
+                </section>
+            </ui:insert>
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">
+                test
+            </ui:insert>
+        </div>
+
+        <div id="bottom">
+            <ui:insert name="bottom">
+                <footer class="footer is-small">
+                    <div class="content has-text-centered">
+                        <p>
+                            <strong>Todo</strong> by <a href="https://somaradio.ca">tcurtis</a>.
+                        </p>
+                    </div>
+                </footer>
+            </ui:insert>
+        </div>
+
+    </h:body>
+
+</html>
