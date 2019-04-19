@@ -8,44 +8,31 @@
         <title>Work Portal: Todo List</title>
     </h:head>
     <h:body>
-        Title
-        <f:view>
-            <h:form>
-                <h1><h:outputText value="List"/></h1>
-                <h:dataTable value="#{listBean.todoList}" var="item">
-
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Title"/>
-                        </f:facet>
-                        <h:outputText value="#{item.title}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Description"/>
-                        </f:facet>
-                        <h:outputText value="#{item.description}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Id"/>
-                        </f:facet>
-                        <h:outputText value="#{item.id}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value=""/>
-                        </f:facet>
-                        <h:link value="edit" outcome="edit">
-                            <f:param name="id" value="#{item.id}"/>
-                        </h:link>
-                        <h:outputText value="#{item.id}"/>
-                    </h:column>
-
-                </h:dataTable>
-            </h:form>
-        </f:view>
-
+        <ui:composition template="/common/commonLayout.xhtml">
+            <ui:define name="content">
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText class="is-medium" value="List"/></h1>
+                        <h:dataTable value="#{listBean.todoList}" var="item" class="table is-bordered is-hoverable is-fullwidth" columnClasses="column1" >
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Title"/>
+                                </f:facet>
+                                <h:link value="#{item.title}" outcome="edit">
+                                    <f:param name="id" value="#{item.id}"/>
+                                </h:link>
+                            </h:column>
+                            <h:column class="is-one-quarter">
+                                <f:facet name="header">
+                                    <h:outputText value="Description"/>
+                                </f:facet>
+                                <h:outputText value="#{item.description}"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+            </ui:define>
+        </ui:composition>
     </h:body>
 </html>
 
