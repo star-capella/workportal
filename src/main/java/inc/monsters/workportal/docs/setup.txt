@@ -47,11 +47,20 @@ Database Driver Vendor: JavaDB
 
 next
 
+Additional Properties:
 User: workportal
 DatabaseName: workportaldb
 DataSourceName: workportaldb
 Password: workportal
 (SecurityMechanism: 3) ??
+PortNumber: 1527
+ServerName: localhost
+TraceFileAppend: false
+Ssl: off
+RetrieveMessageText: true
+LoginTimeout: 0
+TraceLevel: -1
+
 
 Create JDBC Resource
 --------------------
