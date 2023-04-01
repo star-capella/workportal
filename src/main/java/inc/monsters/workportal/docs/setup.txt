@@ -37,6 +37,8 @@ Create database
 -ij
 -ij> CONNECT 'jdbc:derby:workportaldb;create=true';
 :connect 'jdbc:derby:workportaldb;create=true;user=workportal;password=workportal';
+call SYSCS_UTIL.SYSCS_SET_DATABASE_PROPERTY('derby.database.fullAccessusers', 'workportalds');
+create schema AUTHORIZATION WORKPORTAL;
 
 Create Pool
 -----------
