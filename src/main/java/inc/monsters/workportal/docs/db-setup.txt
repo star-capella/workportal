@@ -1,0 +1,8 @@
+java -jar derbyrun.jar ij
+
+connect 'jdbc:derby:/home/tcurtis/.netbeans-derby/workportaldb;create=true;user=workportal;password=workportal';
+
+call SYSCS_UTIL.SYSCS_SET_DATABASE_PROPERTY('derby.database.fullAccessusers', 'workportal');
+
+create schema AUTHORIZATION WORKPORTAL;
+

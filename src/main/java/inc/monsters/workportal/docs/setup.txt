@@ -17,7 +17,7 @@ Add an authorized user to GlassFish Server.
 -On the Edit Realm page, click Manage Users.
 -On the File Users page, click New.
 -In the User ID field, enter a user ID.
--In the Group List field, enter TutorialUser.
+-In the Group List field, enter "staff".
 -In the New Password and Confirm New Password fields, enter a password.
 -Click OK.
 

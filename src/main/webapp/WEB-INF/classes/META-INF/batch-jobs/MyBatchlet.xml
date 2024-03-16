@@ -1,0 +1,5 @@
+<job id="myJob" xmlns="https://jakarta.ee/xml/ns/jakartaee" version="2.0">
+    <step id="myStep" >
+        <batchlet ref="myBatchlet"/>
+    </step>
+</job> 
